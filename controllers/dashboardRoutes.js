@@ -3,6 +3,7 @@ const sequelize = require('../config/connections');
 const { Post, User, Comment } = require('../models');
 const auth = require('../utils/auth');
 
+// setting up the dashboard
 router.get('/', auth, (req, res) => {
     Post.findAll({
         where: {
@@ -34,6 +35,7 @@ router.get('/', auth, (req, res) => {
     });
 });
 
+// posting the data
 router.get('/edit/:id', auth, (req, res) => {
     Post.findOne({
         where: {
