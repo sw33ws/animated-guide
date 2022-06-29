@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const {User, Post, Comment} = require('../../models');
+const Auth = require('../../utils/auth');
 
 // find all Users without the password
 router.get('/', (req, res) => {
@@ -50,7 +51,7 @@ router.get('/:id', (req, res) => {
 });
 
 // creates a new user
-router.post('/', auth, (req, res) => {
+router.post('/', Auth, (req, res) => {
     User.create({
         username: req.body.username,
         password: req.body.password

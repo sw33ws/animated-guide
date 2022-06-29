@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 });
 
 // creating a comment and adding it to the database
-router.post('/', auth, (req, res) => {
+router.post('/', Auth, (req, res) => {
     if (req.session) {
         Comment.create({
             comment_text: req.body.comment_text,
