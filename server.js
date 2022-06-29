@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const exphbs = require('express-handlebars');
 const mysql = require('mysql2');
 const sequelize = require('./config/connection');
@@ -9,7 +10,7 @@ const session = require('express-session');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const SquelizeStore = require('connect-session-sequelize')(session.Store);
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const hbs = exphbs.create({ helpers });
 
